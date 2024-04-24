@@ -1,7 +1,7 @@
 
 # Установка Prometheus + Alertmanager + node_exporter на Linux Debian, Red Hut
 ***
-(Взято с источника https://www.dmosk.ru/instruktions.php?object=prometheus-linux&ysclid=lvaz1t7far456363318)
+
 
 ## Подготовка сервера ##
 Настроим некоторые параметры сервера, необходимые для правильно работы системы.
@@ -112,7 +112,7 @@ sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 Prometheus не устанавливается из репозитория и имеет, относительно, сложный процесс установки. Необходимо скачать исходник, создать пользователя, вручную скопировать нужные файлы, назначить права и создать юнит для автозапуска.
 
 ### Загрузка
-Переходим на официальную страницу загрузки и копируем ссылку на пакет для Linux (желательно, использовать версию LTS):
+Переходим на [официальную страницу загрузки](https://prometheus.io/download/) и копируем ссылку на пакет для Linux (желательно, использовать версию LTS):\
 ... и используем ее для загрузки пакета на Linux:
 ```
 wget https://github.com/prometheus/prometheus/releases/download/v2.45.0/prometheus-2.45.0.linux-amd64.tar.gz
@@ -641,3 +641,7 @@ systemctl restart prometheus
 systemctl stop nginx
 ```
 В консоли Prometheus в разделе Alerts мы должны увидеть тревогу:
+
+
+***
+Взято с [источника](https://www.dmosk.ru/instruktions.php?object=prometheus-linux&ysclid=lvaz1t7far456363318)
