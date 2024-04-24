@@ -1,4 +1,6 @@
+
 # Установка Prometheus + Alertmanager + node_exporter на Linux Debian, Red Hut
+***
 (Взято с источника https://www.dmosk.ru/instruktions.php?object=prometheus-linux&ysclid=lvaz1t7far456363318)
 
 ## Подготовка сервера ##
