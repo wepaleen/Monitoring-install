@@ -151,3 +151,12 @@ find / -name pg_hba.conf
 Затем установите для {$PG.CONNSTRING} макроса значение myconn, чтобы использовать этот именованный сеанс.\
 
 Установите пароль, который вы указали на шаге 2 в макросе {$PG.PASSWORD}.
+
+
+***
+## Используемые ресурсы
+https://www.zabbix.com/ru/download?zabbix=6.4&os_distribution=ubuntu&os_version=22.04&components=server_frontend_agent&db=pgsql&ws=nginx
+https://www.zabbix.com/integrations/postgresql#postgresql_agent2
+https://www.zabbix.com/documentation/6.4/en/manual/extensions/plugins/build
+https://www.zabbix.com/download?zabbix=6.4&os_distribution=ubuntu&os_version=22.04&components=agent_2&db=&ws=
+https://sbcode.net/zabbix/postgresql-template/
