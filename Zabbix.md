@@ -27,7 +27,7 @@ sudo service postgresql status
 ```
 Нажмите ```CTRL+C``` для выхода.
 
-###Установите и запустите сервер базы данных.
+### Установите и запустите сервер базы данных.
 
 
 
@@ -53,7 +53,7 @@ DBPassword=password
 # listen 8080;
 # server_name example.com;
 ```
-Запустите процессы Zabbix сервера и агента
+Запустите процессы Zabbix сервера и агента (В системе может работать только один агент)
 Запустите процессы Zabbix сервера и агента и настройте их запуск при загрузке ОС.
 ```
 # systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
@@ -61,5 +61,7 @@ DBPassword=password
 ```
 # systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
 ```
-Open Zabbix UI web page
-The URL for Zabbix UI when using Nginx depends on the configuration changes you should have made.
+Open Zabbix UI web page ОТройте Zabbix UI веб страницу
+По адресу ```http://YourServerIP:8080```
+***
+Установка ВЕБ-интерфейса <https://www.zabbix.com/documentation/6.0/ru/manual/installation/frontend>
