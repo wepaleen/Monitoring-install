@@ -1,4 +1,5 @@
 # Установка Zabbix-server на Postgesql Ubuntu
+![thb](https://github.com/vprimin/pub/blob/main/Monitoring-install/zproxy.png)
 ### Установите репозиторий Zabbix 
 ```
 # wget https://repo.zabbix.com/zabbix/6.4/ubuntu-arm64/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu22.04_all.deb
