@@ -66,5 +66,25 @@ DBPassword=password
 Октройте Zabbix UI веб-страницу\
 По адресу ```http://YourServerIP:8080```
 ***
-Установка веб-интерфейса <https://www.zabbix.com/documentation/6.0/ru/manual/installation/frontend>
-Установка языка веб-интерфейса <https://www.zabbix.com/documentation/6.0/ru/manual/appendix/install/locales>
+### Установка веб-интерфейса  <https://www.zabbix.com/documentation/6.0/ru/manual/installation/frontend>
+### Установка языка веб-интерфейса 
+<https://www.zabbix.com/documentation/6.0/ru/manual/appendix/install/locales>
+***
+
+## Установка Zabbix-agent2
+
+### Установите и сконфигурируйте Zabbix #
+Установите репозиторий Zabbix
+```
+# wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu22.04_all.deb
+```
+ [Zabbix agent 2]([https://skillbox.ru/media/](https://www.zabbix.com/ru/download?zabbix=6.4&os_distribution=ubuntu&os_version=22.04&components=agent_2&db=&ws=) "Всплывающая подсказка")
+# dpkg -i zabbix-release_6.4-1+ubuntu22.04_all.deb
+# apt update
+b. Установите Заббикс aгент2
+# apt install zabbix-agent2 zabbix-agent2-plugin-*
+c. Запустите процесс Zabbix агента2
+Запустите процесс Zabbix агента2 и настройте его запуск при загрузке ОС.
+
+# systemctl restart zabbix-agent2
+# systemctl enable zabbix-agent2
