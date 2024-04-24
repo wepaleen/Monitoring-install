@@ -20,6 +20,9 @@
 apt update
 ```
 ```
+sudo apt-get install -y apt-transport-https software-properties-common wget
+```
+```
 apt install wget tar
 ```
 б) Для Linux RPM (Rocky / CentOS):
