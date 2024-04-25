@@ -2,7 +2,9 @@
 # Установка Prometheus + Alertmanager + node_exporter на Linux Debian, Red Hut
 ***
 
+![optimizaciya-vremeni-zapuska-Prometheus-2-6-0-s-pomoshyu-pprof](https://github.com/wepaleen/Monitoring-install/assets/110018366/49f67c8f-4348-4540-b697-860062a20bed)
 
+***
 ## Подготовка сервера ##
 Настроим некоторые параметры сервера, необходимые для правильно работы системы.
 
