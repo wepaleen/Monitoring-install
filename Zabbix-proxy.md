@@ -36,6 +36,7 @@ chown zabbix:zabbix /var/lib/zabbix
 vim /etc/zabbix/zabbix_proxy.conf
 ```
 ```
+Server = localhost
 DBName = /var/lib/zabbix/zabbix_proxy
 ```
 ### Запустите процесс Zabbix-proxy и настройте его запуск при загрузке. #
