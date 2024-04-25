@@ -19,7 +19,12 @@ nano /etc/selinux/config
 # yum install zabbix-proxy-sqlite3 zabbix-selinux-policy
 ```
 ### Отредактируйте файл /etc/zabbix/zabbix_proxy.conf and set DBName parameter.(Для надежности указать ```/var/lib/zabbix/``` #
-dic
+```
+mkdir /var/lib/zabbix/
+```
+```
+chown zabbix:zabbix /var/lib/zabbix
+```
 ```
 vim /etc/zabbix/zabbix_proxy.conf
 ```
