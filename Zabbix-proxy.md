@@ -1,4 +1,6 @@
 # Установка Zabbix-proxy на Centos7
+![zabbix](https://github.com/wepaleen/Monitoring-install/assets/110018366/ec407763-743f-4eec-a0a6-5fcdfa59c63b)
+
 ### Установите репозиторий Zabbix #
 ```
 # rpm -Uvh https://repo.zabbix.com/zabbix/6.4/rhel/7/x86_64/zabbix-release-6.4-1.el7.noarch.rpm
