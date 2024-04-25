@@ -49,9 +49,9 @@ sudo service postgresql status
 
 ### Настройте базу данных для Zabbix сервера
 Отредактируйте файл ```/etc/zabbix/zabbix_server.conf```
-
+```
 DBPassword=password
-
+```
 ### Настройте PHP для веб-интерфейса
 Отредактируйте файл ```/etc/zabbix/nginx.conf``` раскомментируйте и настройте директивы 'listen' и 'server_name'.
 ```
@@ -66,7 +66,7 @@ DBPassword=password
 ```
 # systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
 ```
-Октройте Zabbix UI веб-страницу\
+### Октройте Zabbix UI веб-страницу #
 По адресу ```http://YourServerIP:8080```
 ***
 ### Установка [Zabbix UI](https://www.zabbix.com/documentation/6.0/ru/manual/installation/frontend/)
