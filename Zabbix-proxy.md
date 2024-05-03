@@ -46,3 +46,5 @@ DBName = /var/lib/zabbix/zabbix_proxy
 ```
 # systemctl enable zabbix-proxy
 ```
+***
+https://redos.red-soft.ru/base/arm/arm-network/synchro-time/chrony/
