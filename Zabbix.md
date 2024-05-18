@@ -112,6 +112,7 @@ tail -f /var/log/syslog
 ## Настройка
 Разверните Zabbix agent 2 с помощью плагина PostgreSQL. 
 Начиная с версий Zabbix 6.0.10 / 6.2.4 / 6.4 Показатели PostgreSQL переносятся в загружаемый плагин и требуют установки отдельного пакета или compilation of the plugin from sources.
+(войти в базу данных sudo su - postgres база данных psql)
 
 ### Создайте пользователя PostgreSQL для мониторинга (<password> по вашему усмотрению) и унаследуйте разрешения от роли по умолчанию pg_monitor: #
 ```
