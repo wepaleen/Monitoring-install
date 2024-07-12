@@ -17,7 +17,7 @@
 # apt install zabbix-server-pgsql zabbix-frontend-php php8.1-pgsql zabbix-nginx-conf zabbix-sql-scripts zabbix-agent
 ```
 ## Выполните следующие комманды на хосте, где будет распологаться база данных. ##
-### Создайте базу данных
+### Создайте базу данных (удалить или добавить пользака https://www.dmosk.ru/miniinstruktions.php?mini=postgresql-users)
 ```
 sudo apt install postgresql postgresql-contrib
 ```
