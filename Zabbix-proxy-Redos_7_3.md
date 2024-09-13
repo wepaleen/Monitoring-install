@@ -111,3 +111,10 @@ sudo systemctl status zabbix-proxy
  Настройка Zabbix сервера:
      Добавьте Zabbix Proxy в Zabbix сервер.
      Настройте Zabbix сервер для получения данных от Zabbix Proxy.
+```bash
+ls -la /run/zabbix/
+sudo touch /run/zabbix/zabbix_proxy.pid
+sudo chown zabbix:zabbix /run/zabbix/zabbix_proxy.pid
+
+```
+
