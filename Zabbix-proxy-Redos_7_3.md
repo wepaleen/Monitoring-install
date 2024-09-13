@@ -12,6 +12,9 @@ sudo dnf update
 ```bash
 sudo yum upgrade -y
 ```
+
+dnf search zabbix
+
 ### 2. Установка PostgreSQL 15
  Установите PostgreSQL 15 (https://redos.red-soft.ru/base/server-configuring/dbms/install-postgresql/) :
 ```bash
