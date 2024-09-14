@@ -13,18 +13,20 @@ sudo dnf update
 sudo yum upgrade -y
 ```
 
-dnf search zabbix
-
 ### 2. Установка PostgreSQL 15
  Установите PostgreSQL 15 (https://redos.red-soft.ru/base/server-configuring/dbms/install-postgresql/) :
 ```bash
 sudo yum install postgresql15-server
 ```
+или
+```bash
+dnf install postgresql15-server
+```
  Инициализируйте базу данных:
 ```bash
-sudo postgresql-setup initdb
+sudo postgresql-15-setup initdb
 ```
- Запустите PostgreSQL:
+После успешной инициализации запустите службу postgresql и добавьте ее в автозагрузку:
 ```bash
 sudo systemctl start postgresql-15
 ```
@@ -57,7 +59,16 @@ GRANT ALL PRIVILEGES ON DATABASE zabbix TO zabbix;
 ```
 ### 4. Установка Zabbix Proxy
 
- Скачать пакеты:
+Поиск репозитория Zabbix
+```bash
+dnf search zabbix
+```
+Установка
+```bash
+sudo dnf install zabbix-proxy-pgsql-6.4.18
+sudo dnf install zabbix-agent2-6.4.18
+```
+Или скачать пакеты:
      zabbix-agent2-6.4.18-1.el7.x86_64.rpm 
      zabbix-agent-6.4.18-1.el7.x86_64.rpm 
      zabbix-proxy-pgsql-6.4.18-1.el7.x86_64.rpm
@@ -66,6 +77,19 @@ GRANT ALL PRIVILEGES ON DATABASE zabbix TO zabbix;
 sudo dnf install ./zabbix-proxy-pgsql-6.4.18.x86_64.rpm
 sudo dnf install ./zabbix-agent2-6.4.18.x86_64.rpm
 sudo dnf install ./zabbix-agent-6.4.18.x86_64.rpm
+```
+Установка скрипта sql
+```bash
+sudo dnf install zabbix-proxy-pgsql zabbix-sql-scripts
+```
+Создание БД, если не сделали как выше (создается юзер заббикс и бд заббикс_прокси)
+```bash
+sudo -u postgres createuser --pwprompt zabbix
+sudo -u postgres createdb -O zabbix zabbix_proxy
+```
+Импортируйте начальную схему и данные. Вам будет предложено ввести недавно созданный пароль.
+```bash
+cat /usr/share/zabbix-sql-scripts/postgresql/proxy.sql | sudo -u zabbix psql zabbix_proxy
 ```
 ### 5. Настройка Zabbix Proxy
 
@@ -96,12 +120,17 @@ sudo systemctl start zabbix-proxy
 ```bash
 sudo systemctl enable zabbix-proxy
 ```
+Если нужен агент, соответсвенно запустите агентов
 
 ### 7. Проверка работоспособности
 
  Проверьте, что Zabbix Proxy запущен:
 ```bash
 sudo systemctl status zabbix-proxy
+```
+Проверка логов
+```bash
+tail -f /var/log/zabbix/zabbix_proxy.log
 ```
  Проверьте, что Zabbix Proxy подключен к Zabbix серверу:
  Проверьте, что Zabbix Proxy получает данные от агентов:
@@ -114,6 +143,7 @@ sudo systemctl status zabbix-proxy
  Настройка Zabbix сервера:
      Добавьте Zabbix Proxy в Zabbix сервер.
      Настройте Zabbix сервер для получения данных от Zabbix Proxy.
+     
 ```bash
 ls -la /run/zabbix/
 sudo touch /run/zabbix/zabbix_proxy.pid
