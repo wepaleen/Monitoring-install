@@ -1,6 +1,6 @@
 # Инструкция по развертыванию Zabbix Proxy 6.4.18 на RedOS 7.3 с PostgreSQL 15
 ***
-![image](https://github.com/wepaleen/Monitoring-install/assets/110018366/e4415612-e973-48e0-9941-8cf9c2a3f857)
+![image](RedOS.png)
 ***
 
 ### 1. Обновление системы
